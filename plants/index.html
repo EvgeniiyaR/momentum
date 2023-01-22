@@ -23,9 +23,15 @@
 					<li><a class="header__link" href="#contacts">Contacts</a></li>
 				</ul>
 			</nav>
+			<div class="header__burger">
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
 		</div>
 	</header>
-	<main>
+	<main class="main">
 		<section class="header">
 			<div class="welcome">
 				<div class="welcome__card">
@@ -61,42 +67,60 @@
 			</div>
 			<ul class="service__services">
 				<li class="service__service-item">
-					<img src="image/first.png" alt="first">
+					<picture>
+						<source srcset="image/tablet/first.png" media="(max-width: 768px)">
+						<img src="image/first.png" alt="first">
+					</picture>
 					<div class="service__rectangle">
 						<h3 class="service__subtitle">Garden care</h3>
 						<p class="service__paragraph">Lorem Ipsum has been the industry</p>
 					</div>
 				</li>
 				<li class="service__service-item">
-					<img src="image/first1.png" alt="first">
+					<picture>
+						<source srcset="image/tablet/first1.png" media="(max-width: 768px)">
+						<img src="image/first1.png" alt="first">
+					</picture>
 					<div class="service__rectangle">
 						<h3 class="service__subtitle">Planting</h3>
 						<p class="service__paragraph">Lorem Ipsum has been the industry</p>
 					</div>
 				</li>
 				<li class="service__service-item">
-					<img src="image/first2.png" alt="first">
+					<picture>
+						<source srcset="image/tablet/first2.png" media="(max-width: 768px)">
+						<img src="image/first2.png" alt="first">
+					</picture>
 					<div class="service__rectangle">
 						<h3 class="service__subtitle">Lawn care</h3>
 						<p class="service__paragraph">Lorem Ipsum has been the industry</p>
 					</div>
 				</li>
 				<li class="service__service-item">
-					<img src="image/first3.png" alt="first">
+					<picture>
+						<source srcset="image/tablet/first3.png" media="(max-width: 768px)">
+						<img src="image/first3.png" alt="first">
+					</picture>
 					<div class="service__rectangle">
 						<h3 class="service__subtitle">Planting</h3>
 						<p class="service__paragraph">Lorem Ipsum has been the industry</p>
 					</div>
 				</li>
 				<li class="service__service-item">
-					<img src="image/first4.png" alt="first">
+					<picture>
+						<source srcset="image/tablet/first4.png" media="(max-width: 768px)">
+						<img src="image/first4.png" alt="first">
+					</picture>
 					<div class="service__rectangle">
 						<h3 class="service__subtitle">Garden care</h3>
 						<p class="service__paragraph">Lorem Ipsum has been the industry</p>
 					</div>
 				</li>
 				<li class="service__service-item">
-					<img src="image/first5.png" alt="first">
+					<picture>
+						<source srcset="image/tablet/first5.png" media="(max-width: 768px)">
+						<img src="image/first5.png" alt="first">
+					</picture>
 					<div class="service__rectangle">
 						<h3 class="service__subtitle">Planting</h3>
 						<p class="service__paragraph">Lorem Ipsum has been the industry</p>
@@ -135,7 +159,7 @@
 					</div>
 				</div>
 				<div class="prices__contact">
-					<h3 class="prices__second-title">Our best <span class="prices__second-title prices__second-title_color_green">gardeners</span> are ready to help you</h3>
+					<h3 class="prices__second-title">Our best <span class="prices__second-title-word prices__second-title-word_marker_separation">gardeners</span> are ready to help you</h3>
 					<button class="prices__button">Contact us</button>
 				</div>
 			</div>
@@ -167,6 +191,7 @@
 			</ul>
 		</div>
 	</footer>
+	<script src="script.js"></script>
 </body>
 
 </html>
