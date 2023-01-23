@@ -166,7 +166,6 @@ html {
 	display: flex;
 	flex-direction: column;
 	gap: 40px;
-	height: 350px;
 }
 
 .about__title {
@@ -195,6 +194,10 @@ html {
 	max-width: 605px;
 }
 
+.about__card img {
+	display: none;
+}
+
 .service {
 	background-color: #EDF2EC;
 	max-width: 1440px;
@@ -202,7 +205,7 @@ html {
 }
 
 .service__content {
-	padding: 40px 108px;
+	padding: 37px 108px;
 	display: flex;
 	align-items: center;
 }
@@ -304,7 +307,7 @@ html {
 	justify-content: space-between;
 	background-image: url(image/leafs1.png);
 	background-repeat: no-repeat;
-	background-position: top 270.01px right 90px;
+	background-position: right 96px top 261px;
 }
 
 .prices__title {
@@ -552,6 +555,10 @@ html {
 	min-height: 234px;
 }
 
+.contacts img {
+	display: none;
+}
+
 .footer {
 	background-color: white;
 	margin: 38px auto;
@@ -621,7 +628,7 @@ html {
 
 	.welcome {
 		justify-content: flex-start;
-		background-position: top 40px left 438px;
+		background-position: top 45px right 49px;
 		background-size: 280px 254.15px;
 		padding: 43px 51px 70px;
 	}
@@ -650,8 +657,7 @@ html {
 		max-width: 668px;
 		min-height: 743px;
 		padding: 40px 50px 0;
-		background-position: top 430px left 259px;
-    background-size: 250px 258px;
+		background-image: none;
 	}
 
 	.about__card {
@@ -659,7 +665,6 @@ html {
 		flex-direction: column;
 		align-items: center;
 		gap: 51px;
-		height: 350px;
 	}
 
 	.about__title {
@@ -671,6 +676,13 @@ html {
 
 	.about__paragraph {
 		max-width: 668px;
+	}
+
+	.about__card img {
+		display: block;
+		width: 250px;
+		height: 258px;
+		padding: 17px;
 	}
 
 	.service {
@@ -757,10 +769,10 @@ html {
 
 	.contacts {
 		max-width: 768px;
-		background-position: bottom 0 left 294px;
-		background-size: 200px 248.49px;
 		gap: 100px;
 		min-height: 739px;
+		background-image: none;
+		align-items: center;
 	}
 
 	.contacts__title {
@@ -770,6 +782,13 @@ html {
 	.contacts__select {
 		margin: 0 auto;
 		padding: 5px 20px;
+	}
+
+	.contacts img {
+		display: block;
+		width: 200px;
+		height: 248.49px;
+		padding: 149px 0 0 20px;
 	}
 
 	.footer {
@@ -789,12 +808,6 @@ html {
 
 	.footer__link {
 		margin: 0 -7px 0 0;
-	}
-}
-
-@media (max-width: 450px) {
-	.contacts__select {
-		width: 300px;
 	}
 }
 
@@ -870,6 +883,12 @@ html {
     height: 2px;
     width: 100%;
     background: #717171;
+	}
+}
+
+@media (max-width: 450px) {
+	.contacts__select {
+		width: 300px;
 	}
 }
 
@@ -987,8 +1006,7 @@ html {
 	.about__section {
 		min-height: 486px;
 		padding: 30px 25px 0;
-		background-position: top 339px left 115px;
-    background-size: 150px 147px;
+		background-image: none;
 	}
 
 	.about__card {
@@ -996,7 +1014,6 @@ html {
 		flex-direction: column;
 		align-items: center;
 		gap: 14.55px;
-		height: 350px;
 	}
 
 	.about__title {
@@ -1010,6 +1027,13 @@ html {
 		max-width: 330px;
 		font-size: 15px;
 		line-height: 25px;
+	}
+
+	.about__card img {
+		display: block;
+		width: 150px;
+		height: 147px;
+		margin: -27px 0 0 0;
 	}
 
 	.service {
@@ -1149,8 +1173,6 @@ html {
 
 	.contacts {
 		max-width: 380px;
-		background-position: bottom 0 left 139px;
-		background-size: 100px 124.25px;
 		gap: 80px;
 		min-height: 445px;
 	}
@@ -1167,6 +1189,13 @@ html {
 		min-width: 300px;
 		background-position: top 17px right 20px;
 		padding: 5px 17px;
+	}
+
+	.contacts img {
+		display: block;
+		width: 100px;
+		height: 124.25px;
+		padding: 50px 0 0;
 	}
 
 	.footer {
