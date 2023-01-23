@@ -1,5 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Inika:wght@400;700&family=Inter:wght@300;400;700&display=swap');
 
+@keyframes menu {
+	from {
+		transform: translateX(500px);
+	}
+
+	to {
+		transform: translateX(0);
+	}
+}
+
+@keyframes menu-close {
+	from {
+		transform: translateX(0);
+	}
+
+	to {
+		transform: translateX(500px);
+	}
+}
+
 html {
 	scroll-behavior: smooth;
 	box-sizing: border-box;
@@ -12,14 +32,12 @@ html {
 
 .header {
 	background-color: #EDF2EC;
-	width: 1440px;
+	max-width: 1440px;
 	margin: 0 auto;
 }
 
 .header__navbar {
-	padding: 33px 109px 50px 105px;
-	margin: 0 auto;
-	width: 1220px;
+	padding: 43px 107px;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -69,7 +87,7 @@ html {
 }
 
 .welcome {
-	padding: 91px 114px 94px;
+	padding: 97px 109px;;
 	display: flex;
 	justify-content: flex-end;
 	background-image: url(image/leafs.png);
@@ -132,16 +150,15 @@ html {
 
 .about {
 	background-color: white;
-	width: 1440px;
+	max-width: 1440px;
 	margin: 0 auto;
 }
 
 .about__section {
-	width: 1222px;
-	padding: 161px 100px 155px;
+	padding: 157px 109px;
 	background-image: url(image/houseplant1.png);
 	background-repeat: no-repeat;
-	background-position: top 92px right 100px;
+	background-position: top 92px right 109px;
 	background-size: 464px 479px;
 }
 
@@ -180,13 +197,12 @@ html {
 
 .service {
 	background-color: #EDF2EC;
-	width: 1440px;
+	max-width: 1440px;
 	margin: 0 auto;
 }
 
 .service__content {
-	width: 1222px;
-	padding: 43px 102px 79px;
+	padding: 40px 108px;
 	display: flex;
 	align-items: center;
 }
@@ -206,6 +222,7 @@ html {
 	display: flex;
 	gap: 38px;
 	padding: 0 0 0 142px;
+	flex-wrap: wrap;
 }
 
 .service__btn {
@@ -228,8 +245,7 @@ html {
 }
 
 .service__services {
-	width: 1222px;
-	padding: 0 102px 121px;
+	padding: 41px 108px 122px;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
@@ -278,14 +294,12 @@ html {
 
 .prices {
 	background-color: white;
-	width: 1440px;
+	max-width: 1440px;
 	margin: 0 auto;
 }
 
 .prices__wrapper {
-	width: 1222px;
-	height: 560px;
-	padding: 0 100px;
+	padding: 0 109px;
 	display: flex;
 	justify-content: space-between;
 	background-image: url(image/leafs1.png);
@@ -466,12 +480,12 @@ html {
 }
 
 .contacts {
-	width: 1440px;
+	max-width: 1440px;
 	margin: 0 auto;
 	background-color: #EDF2EC;
 	background-image: url(image/contact_woman1.png);
 	background-repeat: no-repeat;
-	background-position: bottom 0 left 100px;
+	background-position: bottom 0 left 110px;
 	display: flex;
 	flex-direction: column;
 	gap: 37px;
@@ -479,7 +493,7 @@ html {
 }
 
 .contacts__title {
-	padding: 60px 20px 0 0;
+	padding: 60px 5px 0 0;
 	margin: 0;
 	color: #499A18;
 	font-family: 'Inika', serif;
@@ -493,9 +507,9 @@ html {
 .contacts__select {
 	width: 450px;
 	align-self: flex-end;
-	margin: 0 117px 0 0;
+	margin: -2px 109px 0 0;
 	border-radius: 0px;
-	padding: 5px 226px 5px 20px;
+	padding: 5px 20px;
 	background: #D6E7D2;
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 	-moz-appearance: none;
@@ -540,15 +554,15 @@ html {
 
 .footer {
 	background-color: white;
-	margin: 40px auto;
-	width: 1440px;
+	margin: 38px auto;
+	max-width: 1440px;
 }
 
 .footer__wrapper {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 0 115px 0 103px;
+	padding: 0 109px;
 }
 
 .footer__data {
@@ -590,14 +604,15 @@ html {
 	padding: 0;
 }
 
+
 @media (max-width: 768px) {
+
 	.header {
-		width: 768px;
+		max-width: 768px;
 	}
 
 	.header__navbar {
-		width: 668px;
-		padding: 35px 15px 28px 7px;
+		padding: 35px 53px 28px;
 	}
 
 	.header__nav {
@@ -612,26 +627,27 @@ html {
 	}
 
 	.welcome__card {
-		max-width: 341px;
 		gap: 33px;
 	}
 
 	.welcome__title {
+		max-width: 341px;
 		font-size: 35px;
 	}
 
 	.welcome__paragraph {
+		max-width: 341px;
 		font-size: 16px;
 		line-height: 25px;
 		margin: 0 4px;
 	}
 
 	.about {
-		width: 768px;
+		max-width: 768px;
 	}
 
 	.about__section {
-		width: 668px;
+		max-width: 668px;
 		min-height: 743px;
 		padding: 40px 50px 0;
 		background-position: top 430px left 259px;
@@ -658,12 +674,10 @@ html {
 	}
 
 	.service {
-		width: 768px;
-		min-height: 1780px;
+		max-width: 768px;
 	}
 
 	.service__content {
-		width: 668px;
 		padding: 60px 49px 40px;
 		flex-direction: column;
 		align-items: flex-start;
@@ -677,11 +691,11 @@ html {
 
 	.service__btns {
 		padding: 0;
+		flex-wrap: wrap;
 	}
 
 	.service__services {
-    width: 668px;
-    padding: 0 50px 70px;
+    padding: 0 50px 171px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -711,14 +725,13 @@ html {
 	}
 
 	.prices {
-		width: 768px;
+		max-width: 768px;
 	}
 
 	.prices__wrapper {
-		width: 668px;
-		height: 585px;
-		padding: 0 0 0 51px;
-		background-position: top 322px right -11px;
+		padding: 0 49px 36px;
+		background-position: top 322px right 38px;
+		flex-wrap: wrap;
 	}
 
 	.prices__title {
@@ -743,7 +756,7 @@ html {
 	}
 
 	.contacts {
-		width: 768px;
+		max-width: 768px;
 		background-position: bottom 0 left 294px;
 		background-size: 200px 248.49px;
 		gap: 100px;
@@ -755,12 +768,13 @@ html {
 	}
 
 	.contacts__select {
-		margin: 0 159px;
+		margin: 0 auto;
+		padding: 5px 20px;
 	}
 
 	.footer {
 		margin: 0;
-		width: 768px;
+		max-width: 768px;
 	}
 
 	.footer__wrapper {
@@ -778,27 +792,13 @@ html {
 	}
 }
 
-@media (max-width: 380px) {
-
-	@keyframes menu {
-		from {
-			transform: translateX(500px);
-		}
-
-		to {
-			transform: translateX(0);
-		}
+@media (max-width: 450px) {
+	.contacts__select {
+		width: 300px;
 	}
+}
 
-	@keyframes menu-close {
-		from {
-			transform: translateX(0);
-		}
-
-		to {
-			transform: translateX(500px);
-		}
-	}
+@media (max-width: 668px) {
 
 	.main_blur {
 		position: relative;
@@ -807,19 +807,13 @@ html {
 	}
 
 	.header {
-		width: 380px;
-	}
-
-	.header__navbar {
-		width: 330px;
-		padding: 39px 2px 37px 0;
+		max-width: 768px;
 	}
 
 	.header__nav {
 		gap: 46px;
 		display: none;
 		max-height: 0;
-		/* transition: 5s ease max-height; */
 	}
 
 	.header__nav_active {
@@ -827,25 +821,100 @@ html {
 		display: flex;
 		flex-wrap: wrap;
 		margin: 0 auto;
-    width: 330px;
+    max-width: 330px;
     justify-content: center;
 		opacity: 1;
-		/* max-height: 100%; */
-		/* transition: 1s ease max-height; */
 	}
 
 	.header__nav_open {
 		animation: menu 900ms;
 		opacity: 1;
 		visibility: visible;
-    /* transform: scale(1); */
 	}
 
 	.header__nav_close {
 		animation: menu-close 900ms;
 		opacity: 1;
 		visibility: visible;
-    /* transform: scale(0); */
+	}
+
+	.header__burger {
+		display: block;
+		width: 40px;
+		height: 24px;
+		margin-left: 10px;
+		display: flex;
+		flex-direction: column;
+		gap: 5px;
+		margin: -4px 0 0 0;
+		cursor: pointer;
+	}
+
+	.header__burger span {
+		transition: all .3s;
+	}
+
+	.header__burger_first {
+		transform: translate(0, 10px) rotate(45deg);
+	}
+
+	.header__burger_middle {
+		transform: scale(0);
+	}
+
+	.header__burger_last {
+		transform: translate(0, -10px) rotate(-45deg);
+	}
+
+	.header__burger span {
+    height: 2px;
+    width: 100%;
+    background: #717171;
+	}
+}
+
+@media (max-width: 380px) {
+
+	.main_blur {
+		position: relative;
+		z-index: -1;
+		filter: blur(10px);
+	}
+
+	.header {
+		max-width: 380px;
+	}
+
+	.header__navbar {
+		padding: 39px 25px 37px;
+	}
+
+	.header__nav {
+		gap: 46px;
+		display: none;
+		max-height: 0;
+	}
+
+	.header__nav_active {
+		row-gap: 0;
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0 auto;
+    max-width: 330px;
+    justify-content: center;
+		opacity: 1;
+	}
+
+	.header__nav_open {
+		animation: menu 900ms;
+		opacity: 1;
+		visibility: visible;
+	}
+
+	.header__nav_close {
+		animation: menu-close 900ms;
+		opacity: 1;
+		visibility: visible;
 	}
 
 	.header__burger {
@@ -889,8 +958,8 @@ html {
 	}
 
 	.welcome__card {
-		max-width: 330px;
 		gap: 20px;
+		padding: 0 23px;
 	}
 
 	.welcome__title {
@@ -911,12 +980,11 @@ html {
 	}
 
 	.about {
-		width: 380px;
+		max-width: 380px;
 		min-height: 516px;
 	}
 
 	.about__section {
-		width: 330px;
 		min-height: 486px;
 		padding: 30px 25px 0;
 		background-position: top 339px left 115px;
@@ -945,12 +1013,11 @@ html {
 	}
 
 	.service {
-		width: 380px;
+		max-width: 380px;
 		min-height: 3150px;
 	}
 
 	.service__content {
-		width: 330px;
 		padding: 30px 25px;
 		flex-direction: column;
 		align-items: flex-start;
@@ -979,8 +1046,7 @@ html {
 	}
 
 	.service__services {
-    width: 279px;
-    padding: 10px 0 27px 52px;
+    padding: 10px 50px 27px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -1011,37 +1077,47 @@ html {
 	}
 
 	.prices {
-		width: 380px;
+		max-width: 380px;
+		padding: 0;
+		margin: 0;
 	}
 
 	.prices__wrapper {
-		width: 230px;
-		height: 512px;
-		padding: 0 0 0 16px;
+		padding: 25px 0 41px 0;
+		margin: 0;
 		background-image: none;
 		flex-direction: column;
-		margin: 0 auto;
-		justify-content: start;
+		align-items: center;
+	}
+
+	.prices__left {
+		display: flex;
+		flex-direction: column;
+		row-gap: 39px;
+		padding: 0;
+		margin: 0;
 	}
 
 	.prices__title {
 		font-size: 25px;
 		line-height: 30.26px;
+		padding: 0;
 		margin: 0;
-		padding: 25px 14px 0 0;
 		text-align: center;
 	}
 
 	.prices__items {
 		gap: 11px;
 		align-items: center;
-		padding: 29px 22px;
+		padding: 0;
+		margin: 27px 0;
 	}
 
 	.prices__card {
 		width: 224px;
 		height: 235px;
-    margin: 36px -4px 19px;
+    padding: 0;
+		margin: 0;
 	}
 
 	.prices__item:not(:focus) {
@@ -1053,6 +1129,7 @@ html {
 	.prices__contact {
 		gap: 14px;
 		align-items: center;
+		margin: 17px -17px 0 0;
 	}
 
 	.prices__second-title {
@@ -1071,7 +1148,7 @@ html {
 	}
 
 	.contacts {
-		width: 380px;
+		max-width: 380px;
 		background-position: bottom 0 left 139px;
 		background-size: 100px 124.25px;
 		gap: 80px;
@@ -1085,14 +1162,16 @@ html {
 	}
 
 	.contacts__select {
-		margin: 2px 42px;
-		width: 300px;
+		margin: 2px auto;
+		max-width: 300px;
+		min-width: 300px;
 		background-position: top 17px right 20px;
+		padding: 5px 17px;
 	}
 
 	.footer {
 		margin: 0;
-		width: 380px;
+		max-width: 380px;
 	}
 
 	.footer__wrapper {
