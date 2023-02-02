@@ -77,6 +77,11 @@ html {
 	line-height: 50px;
 }
 
+.header__link:hover {
+	color: #E06733;
+	font-weight: 700;
+}
+
 .header__link_active {
 	color: #E06733;
 	font-weight: 700;
@@ -140,6 +145,7 @@ html {
 	font-size: 16px;
 	line-height: 20px;
 	text-transform: uppercase;
+	cursor: pointer;
 }
 
 .welcome__button:hover {
@@ -240,11 +246,13 @@ html {
 	font-size: 20px;
 	line-height: 26px;
 	color: #E06733;
+	cursor: pointer;
 }
 
-.service__btn_active {
+.service__btn:hover, .service__btn_active {
 	background-color: #E06733;
 	color: white;
+	transition-duration: 1s;
 }
 
 .service__services {
@@ -261,6 +269,12 @@ html {
 	width: 330px;
 	margin: 0;
 	padding: 0;
+	transition-duration: 1s;
+}
+
+.service__blur {
+	filter: blur(10px);
+	transition-duration: 1s;
 }
 
 .service__rectangle {
@@ -340,7 +354,7 @@ html {
 	border: 0;
 }
 
-.prices__item:not(:focus){
+.prices__item {
 	box-sizing: border-box;
 	margin: 0;
 	font-family: 'Inter', sans-serif;
@@ -356,35 +370,44 @@ html {
 	background-image: url(image/accordion_btn1.svg);
 	background-repeat: no-repeat;
 	background-position: top 17px right 40px;
+	cursor: pointer;
 }
 
-.prices__item_type_bas:not(:focus)::before {
-	content: 'Basics';
+.prices__item-active {
+	display: block;
+	margin: -34px 0 0;
+	box-sizing: border-box;
+	margin: 0;
+	font-family: 'Inter', sans-serif;
+	font-style: normal;
+	font-weight: 700;
+	font-size: 20px;
+	line-height: 20px;
+	color: #000000;
+	background-color: #EDF2EC;
+	border-radius: 20px;
+	padding: 16px 110px 16px 40px;
+	width: 250px;
 }
 
-.prices__item_type_stand:not(:focus)::before {
-	content: 'Standard';
-}
-
-.prices__item_type_pro:not(:focus)::before {
-	content: 'Pro care';
-}
-
-.prices__item:focus::before {
-	content: none;
-}
-
-.prices__item_active {
+.prices__item_inactive {
 	display: none;
 }
 
-.prices__item:focus + .prices__item_active {
-	background-image: url(image/accordion_btn2.svg);
-	background-repeat: no-repeat;
-	background-position: top 17px right 40px;
-	background-color: #D6E7D2;
-	display: block;
-	margin: -34px 0 0;
+.prices__click {
+	display: flex;
+	gap: 64px;
+  justify-content: space-between;
+  align-items: flex-start;
+	cursor: pointer;
+}
+
+.prices__items .prices__item-active:nth-child(2) .prices__click:only-of-type {
+	gap: 89px;
+}
+
+.prices__items .prices__item-active:last-child .prices__click:last-of-type {
+	gap: 75px;
 }
 
 .prices__subtitle {
@@ -420,7 +443,10 @@ html {
 	line-height: 20px;
 }
 
-.prices__price_color_orange {
+.prices__price_price_marker {
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 20px;
 	color: #E06733;
 }
 
@@ -430,12 +456,16 @@ html {
 	font-weight: 700;
 	font-size: 14px;
 	line-height: 20px;
-	color: #717171;
 	background: #FFFFFF;
 	border-radius: 10px;
 	border: 1px;
 	padding: 3px 20px;
 	margin: 12px 0 0;
+}
+
+.prices__link {
+	text-decoration: none;
+	color: #717171;
 }
 
 .prices__contact {
@@ -474,6 +504,7 @@ html {
 	font-size: 20px;
 	line-height: 26px;
 	color: #E06733;
+	cursor: pointer;
 }
 
 .prices__button:hover {
@@ -508,6 +539,107 @@ html {
 }
 
 .contacts__select {
+	align-self: flex-end;
+	margin: 0 109px 0 0;
+}
+
+.contacts__select-button {
+	box-sizing: border-box;
+	position: relative;
+	text-align: left;
+	width: 450px;
+	background: #D6E7D2;
+	padding: 5px 20px;
+	border: none;
+	font-family: 'Inter', sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 40px;
+	letter-spacing: 0.05em;
+	color: #717171;
+	cursor: pointer;
+	border-radius: 0px;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.contacts__select-button::after {
+	content: '';
+	position: absolute;
+	background-image: url(image/accordion_btn.svg);
+	background-repeat: no-repeat;
+	pointer-events: none;
+	width: 16px;
+	height: 16px;
+	top: 17px;
+	right: 35px;
+}
+
+.contacts__dropdown {
+	position: relative;
+}
+
+.contacts__list {
+	display: none;
+	position: absolute;
+	margin: 0;
+	padding: 32px;
+	list-style: none;
+	background: #DCE9D9;
+	overflow: hidden;
+	width: 86%;
+	z-index: 1;
+}
+
+.contacts__list_visible {
+	display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.contacts__option {
+	margin: -3px;
+	padding: 0;
+	font-family: 'Inter', sans-serif;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 40px;
+	color: #499A18;
+	border-bottom: 1px solid #D9D9D9;
+	cursor: pointer;
+}
+
+.contacts__option:hover {
+	color: #717171;
+	border-bottom: 1px solid #717171;
+}
+
+.contacts__dropdown-hidden {
+	display: none;
+}
+
+.contacts__select-button:focus,  .contacts__select-button_active {
+	background-color: #C1E698;
+	outline: none;
+	box-shadow: none;
+}
+
+.contacts__select-button:focus::after, .contacts__select-button_active::after {
+	position: absolute;
+	content: '';
+	pointer-events: none;
+	width: 16px;
+	height: 16px;
+	top: 17px;
+	right: 35px;
+	background-image: url(image/arrow.svg);
+	background-repeat: no-repeat;
+	background-color: #C1E698;
+	outline: none;
+	box-shadow: none;
+}
+
+/* .contacts__select {
 	width: 450px;
 	align-self: flex-end;
 	margin: -2px 109px 0 0;
@@ -529,6 +661,8 @@ html {
 	line-height: 40px;
 	letter-spacing: 0.05em;
 	color: #717171;
+	outline: none;
+	cursor: pointer;
 }
 
 .contacts__select:focus {
@@ -553,7 +687,7 @@ html {
 	outline: none;
 	border: 0;
 	min-height: 234px;
-}
+} */
 
 .contacts img {
 	display: none;
@@ -610,7 +744,6 @@ html {
 	margin: 0;
 	padding: 0;
 }
-
 
 @media (max-width: 768px) {
 
@@ -781,7 +914,16 @@ html {
 
 	.contacts__select {
 		margin: 0 auto;
+	}
+
+	.contacts__select-button {
+		box-sizing: border-box;
 		padding: 5px 20px;
+		width: 300px;
+	}
+
+	.contacts__list {
+		width: 79%;
 	}
 
 	.contacts img {
@@ -887,8 +1029,13 @@ html {
 }
 
 @media (max-width: 450px) {
-	.contacts__select {
+
+	.contacts__select-button {
 		width: 300px;
+	}
+
+	.contacts__list {
+		width: 79%;
 	}
 }
 
@@ -1183,12 +1330,9 @@ html {
     line-height: 32.57px;
 	}
 
-	.contacts__select {
-		margin: 2px auto;
-		max-width: 300px;
-		min-width: 300px;
-		background-position: top 17px right 20px;
+	.contacts__select-button {
 		padding: 5px 17px;
+		width: 300px;
 	}
 
 	.contacts img {
