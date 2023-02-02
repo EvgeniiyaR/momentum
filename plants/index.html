@@ -16,7 +16,7 @@
 			<div class="header__logo"><img src="image/logo_vector.svg" alt="logo" width="20" height="20"><a class="header__logo-link" href="#">Plants</a></div>
 			<nav>
 				<ul class="header__nav">
-					<li><a class="header__link header__link_active" href="#">Home</a></li>
+					<li><a class="header__link" href="#">Home</a></li>
 					<li><a class="header__link" href="#about">About us</a></li>
 					<li><a class="header__link" href="#service">Service</a></li>
 					<li><a class="header__link" href="#price">Price</a></li>
@@ -61,7 +61,7 @@
 			<div class="service__content">
 				<h2 class="service__title">Service and our projects</h2>
 				<div class="service__btns">
-					<button class="service__btn service__btn_active">Gardens</button>
+					<button class="service__btn">Gardens</button>
 					<button class="service__btn">Lawn</button>
 					<button class="service__btn">Planting</button>
 				</div>
@@ -135,26 +135,35 @@
 					<h2 class="prices__title">Prices</h2>
 					<div class="prices__card">
 						<ul class="prices__items">
-							<li class="prices__item prices__item_type_bas" tabindex="1"></li>
-							<li class="prices__item prices__item_active">
-								<p class="prices__subtitle">Basics</p>
+							<li class="prices__item" tabindex="1">Basics</li>
+							<li class="prices__item-active prices__item_inactive">
+								<div class="prices__click">
+									<p class="prices__subtitle">Basics</p>
+									<img src="image/accordion_btn2.svg" alt="btn">
+								</div>
 								<p class="prices__paragraph">Release of Letraset sheets containing Lorem Ipsum passages, and more recently</p>
-								<p class="prices__price"><span class="prices__price prices__price_color_orange">$15</span> / per hour</p>
-								<button class="prices__order">Order</button>
+								<p class="prices__price"><span class="prices__price prices__price_price_marker">$15</span> / per hour</p>
+								<button class="prices__order"><a class="prices__link" href="#contacts">Order</a></button>
 							</li>
-							<li class="prices__item prices__item_type_stand" tabindex="1"></li>
-							<li class="prices__item prices__item_active">
-								<p class="prices__subtitle">Standard</p>
+							<li class="prices__item" tabindex="1">Standard</li>
+							<li class="prices__item-active prices__item_inactive">
+								<div class="prices__click">
+									<p class="prices__subtitle">Standard</p>
+									<img src="image/accordion_btn2.svg" alt="btn">
+								</div>
 								<p class="prices__paragraph">Release of Letraset sheets containing Lorem Ipsum passages, and more recently</p>
-								<p class="prices__price"><span class="prices__price prices__price_color_orange">$25</span> / per hour</p>
-								<button class="prices__order">Order</button>
+								<p class="prices__price"><span class="prices__price prices__price_price_marker">$25</span> / per hour</p>
+								<button class="prices__order"><a class="prices__link" href="#contacts">Order</a></button>
 							</li>
-							<li class="prices__item prices__item_type_pro" tabindex="1"></li>
-							<li class="prices__item prices__item_active">
-								<p class="prices__subtitle">Pro care</p>
+							<li class="prices__item" tabindex="1">Pro care</li>
+							<li class="prices__item-active prices__item_inactive">
+								<div class="prices__click">
+									<p class="prices__subtitle">Pro&nbsp;care</p>
+									<img src="image/accordion_btn2.svg" alt="btn">
+								</div>
 								<p class="prices__paragraph">Release of Letraset sheets containing Lorem Ipsum passages, and more recently</p>
-								<p class="prices__price"><span class="prices__price prices__price_color_orange">$35</span> / per hour</p>
-								<button class="prices__order">Order</button>
+								<p class="prices__price"><span class="prices__price prices__price_price_marker">$35</span> / per hour</p>
+								<button class="prices__order"><a class="prices__link" href="#contacts">Order</a></button>
 							</li>
 						</ul>
 					</div>
@@ -167,13 +176,27 @@
 		</section>
 		<section class="contacts" id="contacts">
 			<h2 class="contacts__title">Contact us</h2>
-			<select class="contacts__select contacts__select_city" name="contacts" id="contact">
+			<!-- <select class="contacts__select" name="contacts" id="contact">
 				<option class="contacts__option" value="City" hidden selected>City</option>
 				<option class="contacts__option" value="Canandaigua">Canandaigua, NY</option>
 				<option class="contacts__option" value="New York City">New York City</option>
 				<option class="contacts__option" value="Yonkers">Yonkers, NY</option>
 				<option class="contacts__option" value="Sherrill">Sherrill, NY</option>
-			</select>
+			</select> -->
+
+				<div class="contacts__select">
+					<div class="contacts__dropdown">
+						<button class="contacts__select-button">City</button>
+						<ul class="contacts__list">
+							<li class="contacts__option" data-value="Canandaigua">Canandaigua, NY</li>
+							<li class="contacts__option" data-value="New York City">New York City</li>
+							<li class="contacts__option" data-value="Yonkers">Yonkers, NY</li>
+							<li class="contacts__option" data-value="Sherrill">Sherrill, NY</li>
+						</ul>
+						<input class="contacts__dropdown-hidden" type="text" name="contacts" value="">
+					</div>
+				</div>
+
 			<img src="image/contact_woman1.png" alt="woman">
 		</section>
 	</main>
