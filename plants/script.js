@@ -144,7 +144,9 @@ const contactsSelectBtn = document.querySelector('.contacts__select-button');
 const contactsList = document.querySelector('.contacts__list');
 const contactsOption = document.querySelectorAll('.contacts__option');
 const contactsDropdownHidden = document.querySelector('.contacts__dropdown-hidden');
-
+const contactsWrapperCard = document.querySelector('.contacts__wrapper-card');
+const contactsPick = document.querySelectorAll('.contacts__pick');
+const contactsCardButton= document.querySelector('.contacts__card-button');
 
 contactsSelectBtn.addEventListener('click', function() {
   contactsList.classList.toggle('contacts__list_visible');
@@ -155,9 +157,38 @@ contactsOption.forEach(function (listItem) {
   listItem.addEventListener('click', function(e) {
     e.stopPropagation();
     contactsSelectBtn.innerText = this.innerText;
-    contactsSelectBtn.focus();
+    // contactsSelectBtn.focus();
     contactsDropdownHidden.value = this.dataset.value;
     contactsList.classList.remove('contacts__list_visible');
+    if (!contactsWrapperCard.classList.contains('contacts__wrapper-card-active')) {
+      contactsWrapperCard.classList.add('contacts__wrapper-card-active');
+    } else {
+      contactsSelectBtn.classList.remove('contact__wrapper-card-active');
+    }
+    if (contactsDropdownHidden.value === 'Canandaigua, NY') {
+      contactsPick[0].innerText = 'Canandaigua, NY';
+      contactsPick[1].innerText = '+1	585	393 0001';
+      contactsPick[2].innerText = '151 Charlotte Street';
+      contactsCardButton.href = 'tel:+1 585 393 0001';
+    } else if (contactsDropdownHidden.value === 'New York City') {
+      contactsPick[0].innerText = 'New York City';
+      contactsPick[1].innerText = '+1	212	456 0002';
+      contactsPick[2].innerText = '9 East 91st Street';
+      contactsCardButton.href = 'tel:+1 212 456 0002';
+    } else if (contactsDropdownHidden.value === 'Yonkers, NY') {
+      contactsPick[0].innerText = 'Yonkers, NY';
+      contactsPick[1].innerText = '+1	914	678 0003';
+      contactsPick[2].innerText = '511 Warburton Ave';
+      contactsCardButton.href = 'tel:+1 914 678 0003';
+    } else if (contactsDropdownHidden.value === 'Sherrill, NY') {
+      contactsPick[0].innerText = 'Sherrill, NY';
+      contactsPick[1].innerText = '+1	315	908 0004';
+      contactsPick[2].innerText = '14 WEST Noyes BLVD';
+      contactsCardButton.href ='tel:+1 315 908 0004';
+    }
+    if (contactsDropdownHidden.value !== '') {
+      contactsSelectBtn.classList.add('contacts__select-button_not-focus');
+    }
   })
 })
 
@@ -186,7 +217,6 @@ let dictHeader = {
   'Price': 3,
   'Contacts': 4,
 };
-
 
 headerLink.forEach(element => element.addEventListener('click', function() {
   headerLink.forEach(el => {
