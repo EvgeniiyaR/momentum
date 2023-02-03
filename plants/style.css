@@ -310,12 +310,14 @@ html {
 }
 
 .prices {
+	box-sizing: border-box;
 	background-color: white;
 	max-width: 1440px;
 	margin: 0 auto;
 }
 
 .prices__wrapper {
+	box-sizing: border-box;
 	padding: 0 109px;
 	display: flex;
 	justify-content: space-between;
@@ -339,7 +341,7 @@ html {
 	box-sizing: border-box;
 	border: 1px solid #E3E1D5;
 	border-radius: 20px;
-	width: 334px;
+	max-width: 334px;
 	margin: 60px 0 128.98px;
 }
 
@@ -366,7 +368,7 @@ html {
 	background-color: #EDF2EC;
 	border-radius: 20px;
 	padding: 16px 110px 16px 40px;
-	width: 250px;
+	max-width: 250px;
 	background-image: url(image/accordion_btn1.svg);
 	background-repeat: no-repeat;
 	background-position: top 17px right 40px;
@@ -559,7 +561,7 @@ html {
 	letter-spacing: 0.05em;
 	color: #717171;
 	cursor: pointer;
-	border-radius: 0px;
+	border-radius: 0;
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
@@ -573,6 +575,12 @@ html {
 	height: 16px;
 	top: 17px;
 	right: 35px;
+}
+
+.contacts__select-button_not-focus {
+	content: '';
+	background-color: #C1E698;
+	box-shadow: none;
 }
 
 .contacts__dropdown {
@@ -618,13 +626,13 @@ html {
 	display: none;
 }
 
-.contacts__select-button:focus,  .contacts__select-button_active {
+.contacts__select-button:focus, .contacts__select-button_active {
 	background-color: #C1E698;
 	outline: none;
 	box-shadow: none;
 }
 
-.contacts__select-button:focus::after, .contacts__select-button_active::after {
+.contacts__select-button:focus::after {
 	position: absolute;
 	content: '';
 	pointer-events: none;
@@ -634,9 +642,81 @@ html {
 	right: 35px;
 	background-image: url(image/arrow.svg);
 	background-repeat: no-repeat;
-	background-color: #C1E698;
 	outline: none;
 	box-shadow: none;
+}
+
+.contacts__select-button_active::after {
+	position: absolute;
+	content: '';
+	pointer-events: none;
+	width: 16px;
+	height: 16px;
+	top: 17px;
+	right: 35px;
+	background-image: url(image/accordion_btn.svg);
+	background-repeat: no-repeat;
+	outline: none;
+	box-shadow: none;
+}
+
+.contacts__wrapper-card {
+	display: none;
+	box-sizing: border-box;
+	background: #EDF2EC;
+	border: 1px solid #000000;
+	border-radius: 20px;
+	margin: 47px 0 0 0;
+	padding: 14px 33px 32px;
+	gap: 13px;
+}
+
+.contacts__wrapper-card-active {
+	display: flex;
+	flex-direction: column;
+}
+
+.contacts__card {
+	display: flex;
+	gap: 17px;
+}
+
+.contacts__column {
+	display: flex;
+	flex-direction: column;
+	font-family: 'Inter', sans-serif;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 10px;
+}
+
+.contacts__pick {
+	color: #717171;
+}
+
+.contacts__card-button {
+	box-sizing: border-box;
+	width: 122px;
+	height: 26px;
+	border: 1px solid #E06733;
+	border-radius: 5px;
+	background-color: transparent;
+	align-self: center;
+	font-family: 'Inika', sans-serif;
+	font-weight: 700;
+	font-size: 10px;
+	line-height: 13.03px;
+	text-align: center;
+	color: #717171;
+	cursor: pointer;
+	text-decoration: none;
+	padding: 5px 0;
+}
+
+.contacts__card-button:hover {
+	background-color: #E06733;
+	color: white;
+	transition-duration: 1s;
 }
 
 /* .contacts__select {
@@ -874,19 +954,30 @@ html {
 	}
 
 	.prices__wrapper {
-		padding: 0 49px 36px;
+		padding: 41px 49px 164px;
 		background-position: top 322px right 38px;
 		flex-wrap: wrap;
+	}
+
+	.prices__left {
+		display: flex;
+		flex-direction: column;
+		gap: 57px;
 	}
 
 	.prices__title {
 		font-size: 35px;
 		line-height: 42.36px;
-		margin: 0 14px;
+		margin: 0;
+		padding: 0 15px;
+	}
+
+	.prices__card {
+		margin: 0;
 	}
 
 	.prices__items {
-		gap: 29px;
+		gap: 30px;
 	}
 
 	.prices__contact {
@@ -896,7 +987,7 @@ html {
 	.prices__second-title {
 		font-size: 25px;
 		line-height: 35px;
-		padding: 140px 0 0;
+		padding: 100px 0 0;
 		max-width: 296px;
 	}
 
@@ -919,11 +1010,11 @@ html {
 	.contacts__select-button {
 		box-sizing: border-box;
 		padding: 5px 20px;
-		width: 300px;
+		width: 450px;
 	}
 
 	.contacts__list {
-		width: 79%;
+		width: 86%;
 	}
 
 	.contacts img {
@@ -1031,11 +1122,11 @@ html {
 @media (max-width: 450px) {
 
 	.contacts__select-button {
-		width: 300px;
+		width: 380px;
 	}
 
 	.contacts__list {
-		width: 79%;
+		width: 83%;
 	}
 }
 
@@ -1286,12 +1377,11 @@ html {
 
 	.prices__card {
 		width: 224px;
-		height: 235px;
     padding: 0;
 		margin: 0;
 	}
 
-	.prices__item:not(:focus) {
+	.prices__item {
 		width: 180px;
 		font-size: 15px;
 		padding: 15.91px 61px 15.91px 30px;
@@ -1330,9 +1420,17 @@ html {
     line-height: 32.57px;
 	}
 
+	.contacts__select {
+    width: 300px;
+	}
+	
 	.contacts__select-button {
 		padding: 5px 17px;
 		width: 300px;
+	}
+
+	.contacts__list {
+		width: 79%;
 	}
 
 	.contacts img {
