@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="assets/favicon.ico" rel="shortcut icon" />
+  <link rel="stylesheet" href="css/owfont-regular.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <title>momentum</title>
+</head>
+
+<body class="body">
+  <header class="header">
+    <div>
+      <div class="player">
+        <div class="player-controls">
+          <button class="play-prev player-icon"></button>
+          <button class="play player-icon"></button>
+          <button class="play-next player-icon"></button>
+        </div>
+        <div class="block-play-active">
+          <p class="play-active"></p>
+        </div>
+        <div class="bar">
+          <input class="progress-bar" type="range" value="0" min="0" max="" />
+          <div>
+            <span class="current-time"></span> / <span class="duration-time"></span>
+          </div>
+          <div class="volume-header">
+            <div class="sound-button">
+              <svg width="20" height="20" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M832 352v1088q0 26-19 45t-45 19-45-19l-333-333h-262q-26 0-45-19t-19-45v-384q0-26 19-45t45-19h262l333-333q19-19 45-19t45 19 19 45zm384 544q0 76-42.5 141.5t-112.5 93.5q-10 5-25 5-26 0-45-18.5t-19-45.5q0-21 12-35.5t29-25 34-23 29-36 12-56.5-12-56.5-29-36-34-23-29-25-12-35.5q0-27 19-45.5t45-18.5q15 0 25 5 70 27 112.5 93t42.5 142zm256 0q0 153-85 282.5t-225 188.5q-13 5-25 5-27 0-46-19t-19-45q0-39 39-59 56-29 76-44 74-54 115.5-135.5t41.5-173.5-41.5-173.5-115.5-135.5q-20-15-76-44-39-20-39-59 0-26 19-45t45-19q13 0 26 5 140 59 225 188.5t85 282.5zm256 0q0 230-127 422.5t-338 283.5q-13 5-26 5-26 0-45-19t-19-45q0-36 39-59 7-4 22.5-10.5t22.5-10.5q46-25 82-51 123-91 192-227t69-289-69-289-192-227q-36-26-82-51-7-4-22.5-10.5t-22.5-10.5q-39-23-39-59 0-26 19-45t45-19q13 0 26 5 211 91 338 283.5t127 422.5z"
+                  fill="#fff"></path>
+              </svg>
+            </div>
+            <input class="sound-volume" type="range" min="0" max="1" value="1" step="0.001">
+          </div>
+        </div>
+        <ul class="play-list"></ul>
+      </div>
+    </div>
+    <div class="weather">
+      <input type="text" class="city"/>
+      <i class="weather-icon owf"></i>
+      <div class="weather-error"></div>
+      <div class="description-container">
+        <span class="temperature"></span>
+        <span class="weather-description"></span>
+      </div>
+      <div class="wind"></div>
+      <div class="humidity"></div>
+    </div>
+  </header>
+  <main class="main">
+    <div class="slider-icons">
+      <button class="slide-prev slider-icon"></button>
+      <button class="slide-next slider-icon"></button>
+    </div>
+    <div style="min-height: 134px;">
+      <time class="time"></time>
+    </div>
+    <div style="min-height: 48px;">
+      <date class="date"></date>
+    </div>
+    <div style="min-height: 134px;">
+      <div class="greeting-container">
+        <span class="greeting"></span>
+        <input class="name" type="text" placeholder="[Enter your name]"/>
+      </div>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="setting">
+      <div class="setting-menu">
+        <ul class="setting-list">
+          <li class="setting-change">
+            <p class="setting-change-lang">Language: </p>
+            <div class="setting-change">
+              <label class="setting-lang-en" for="en">English</label>
+              <label class="radio-label" for="en">
+                <input class="setting-language" type="radio" name="lang" value="en-EN" id="en">
+                <span class="radio-span"></span>
+              </label>
+            </div>
+            <div class="setting-change">
+              <label class="setting-lang-ru" for="ru">Russian</label>
+              <label class="radio-label" for="ru">
+                <input class="setting-language" type="radio" name="lang" value="ru-RU" id="ru">
+                <span class="radio-span"></span>
+              </label>
+            </div>
+          </li>
+          <li class="setting-change">
+            <p class="setting-change-api">Source images: </p>
+            <div class="setting-change">
+              <label class="setting-api-github" for="github">GitHub</label>
+              <label class="radio-label" for="github">
+                <input class="setting-api" type="radio" name="api" value="GitHub" id="github">
+                <span class="radio-span"></span>
+              </label>
+            </div>
+            <div class="setting-change-column">
+              <div>
+                <label class="setting-api-unsplash" for="unsplash">Unsplash</label>
+                <label class="radio-label" for="unsplash">
+                  <input class="setting-api" type="radio" name="api" value="Unsplash" id="unsplash">
+                  <span class="radio-span"></span>
+                </label>
+              </div>
+              <input class="setting-api-tag" type="text" id="unsplash" placeholder="#tag">
+            </div>
+            <div class="setting-change-column">
+              <div>
+                <label class="setting-api-flickr" for="flickr">Flickr</label>
+                <label class="radio-label" for="flickr">
+                  <input class="setting-api" type="radio" name="api" value="Flickr" id="flickr">
+                  <span class="radio-span"></span>
+                </label>
+              </div>
+              <input class="setting-api-tag" type="text" id="flickr" placeholder="#tag">
+            </div>
+          </li>
+          <li>
+            <ul class="setting-change-set-list"><p class="setting-change-set">ON/OFF: </p>
+              <li class="setting-change-set-li">
+                <label class="setting-change-set-time" for="Time">Time</label>
+                <label class="switch" for="Time">
+                  <input class="setting-change-set-checkbox" type="checkbox" name="set" value="Time" id="Time">
+                  <span class="slider round"></span>
+                </label>
+              </li>
+              <li class="setting-change-set-li">
+                <label class="setting-change-set-date" for="Date">Date</label>
+                <label class="switch" for="Date">
+                  <input class="setting-change-set-checkbox" type="checkbox" name="set" value="Date" id="Date">
+                  <span class="slider round"></span>
+                </label>
+              </li>
+              <li class="setting-change-set-li">
+                <label class="setting-change-set-greeting" for="Greeting">Greeting</label>
+                <label class="switch" for="Greeting">
+                  <input class="setting-change-set-checkbox" type="checkbox" name="set" value="Greeting" id="Greeting">
+                  <span class="slider round"></span>
+                </label>
+              </li>
+              <li class="setting-change-set-li">
+                <label class="setting-change-set-quote" for="Quote">Quote</label>
+                <label class="switch" for="Quote">
+                  <input class="setting-change-set-checkbox" type="checkbox" name="set" value="Quote" id="Quote">
+                  <span class="slider round"></span>
+                </label>
+              </li>
+              <li class="setting-change-set-li">
+                <label class="setting-change-set-weather" for="Weather">Weather</label>
+                <label class="switch" for="Weather">
+                  <input class="setting-change-set-checkbox" type="checkbox" name="set" value="Weather" id="Weather">
+                  <span class="slider round"></span>
+                </label>
+              </li>
+              <li class="setting-change-set-li">
+                <label class="setting-change-set-audio" for="AudioPlayer">AudioPlayer</label>
+                <label class="switch" for="AudioPlayer">
+                  <input class="setting-change-set-checkbox" type="checkbox" name="set" value="AudioPlayer" id="AudioPlayer">
+                  <span class="slider round"></span>
+                </label>
+              </li>
+              <li class="setting-change-set-li">
+                <label class="setting-change-set-todolist" for="ToDoList">ToDoList</label>
+                <label class="switch" for="ToDoList">
+                  <input class="setting-change-set-checkbox" type="checkbox" name="set" value="ToDoList" id="ToDoList">
+                  <span class="slider round"></span>
+                </label>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <svg class="setting-button" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="30" viewBox="0 0 16 16">
+        <path fill="#ffffff" fill-opacity=".8" d="M15.2 6l-1.1-0.2c-0.1-0.2-0.1-0.4-0.2-0.6l0.6-0.9 0.5-0.7-2.6-2.6-0.7 0.5-0.9 0.6c-0.2-0.1-0.4-0.1-0.6-0.2l-0.2-1.1-0.2-0.8h-3.6l-0.2 0.8-0.2 1.1c-0.2 0.1-0.4 0.1-0.6 0.2l-0.9-0.6-0.7-0.4-2.5 2.5 0.5 0.7 0.6 0.9c-0.2 0.2-0.2 0.4-0.3 0.6l-1.1 0.2-0.8 0.2v3.6l0.8 0.2 1.1 0.2c0.1 0.2 0.1 0.4 0.2 0.6l-0.6 0.9-0.5 0.7 2.6 2.6 0.7-0.5 0.9-0.6c0.2 0.1 0.4 0.1 0.6 0.2l0.2 1.1 0.2 0.8h3.6l0.2-0.8 0.2-1.1c0.2-0.1 0.4-0.1 0.6-0.2l0.9 0.6 0.7 0.5 2.6-2.6-0.5-0.7-0.6-0.9c0.1-0.2 0.2-0.4 0.2-0.6l1.1-0.2 0.8-0.2v-3.6l-0.8-0.2zM15 9l-1.7 0.3c-0.1 0.5-0.3 1-0.6 1.5l0.9 1.4-1.4 1.4-1.4-0.9c-0.5 0.3-1 0.5-1.5 0.6l-0.3 1.7h-2l-0.3-1.7c-0.5-0.1-1-0.3-1.5-0.6l-1.4 0.9-1.4-1.4 0.9-1.4c-0.3-0.5-0.5-1-0.6-1.5l-1.7-0.3v-2l1.7-0.3c0.1-0.5 0.3-1 0.6-1.5l-1-1.4 1.4-1.4 1.4 0.9c0.5-0.3 1-0.5 1.5-0.6l0.4-1.7h2l0.3 1.7c0.5 0.1 1 0.3 1.5 0.6l1.4-0.9 1.4 1.4-0.9 1.4c0.3 0.5 0.5 1 0.6 1.5l1.7 0.3v2z"></path>
+        <path fill="#ffffff" fill-opacity=".8" d="M8 4.5c-1.9 0-3.5 1.6-3.5 3.5s1.6 3.5 3.5 3.5 3.5-1.6 3.5-3.5c0-1.9-1.6-3.5-3.5-3.5zM8 10.5c-1.4 0-2.5-1.1-2.5-2.5s1.1-2.5 2.5-2.5 2.5 1.1 2.5 2.5c0 1.4-1.1 2.5-2.5 2.5z"></path>
+      </svg>
+      <ul class="footer-data">
+				<li>© 2023 <a class="footer-link" href="https://github.com/EvgeniiyaR" target="_blank">github</a></li>
+        <li><a class="footer-rs" href="https://rs.school/js-stage0/" target="_blank">Rolling Scopes School</a></li>
+			</ul>
+    </div>
+    <div class="container-quote">
+      <button class="change-quote"></button>
+      <div>
+        <div class="quote"></div>
+        <div class="author"></div>
+      </div>
+    </div>
+    <div class="todolist-wrapper">
+      <div class="todolist">
+        <div class="todolist-enter">
+          <input class="todolist-input-text input-text" type="text" id="todolist-input-text" placeholder="Your task">
+          <button class="todolist-button">+</button>
+        </div>
+        <ul class="todolist-task-list">
+        </ul>
+        <button class="todolist-button-clear">Clear</button>
+      </div>
+    </div>
+  </footer>
+  <script type="module" src="js/index.js"></script>
+  <script src="js/script.js"></script>
+</body>
+
+</html>
